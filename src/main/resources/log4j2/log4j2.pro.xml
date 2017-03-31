@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+	    <RollingFile name="DAILY_LOG" fileName="/tmp/canigo.log" filePattern="tmp/%d{ddMMyyyy}_canigo.log" append="true">
+			<PatternLayout pattern="canigo Message: %d{dd MM yyyy HH:mm:ss,SSS} %-5p [%t] %-5p [%t] %c - %m%n"/>
+		    <Policies>
+		    	<TimeBasedTriggeringPolicy interval="1"/>
+		    </Policies>                               
+		</RollingFile>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="canigo Message: %d{dd MM yyyy HH:mm:ss,SSS} %-5p [%t] %-5p [%t] %c - %m%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Logger name="cat.gencat.ctti" level="error" additivity="false">
+			<AppenderRef ref="DAILY_LOG" />
+		</Logger>
+		<Root level="error">
+			<AppenderRef ref="DAILY_LOG" />
+		</Root>
+	</Loggers>
+</Configuration>

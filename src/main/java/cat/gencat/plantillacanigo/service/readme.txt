@@ -1,0 +1,1 @@
+En aquesta carpeta es guardaran les classes que defineixen la capa de serveis de l'aplicació

@@ -1,0 +1,1 @@
+En aquesta carpeta es guardaran les classes d'utilitats

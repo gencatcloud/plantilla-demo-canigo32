@@ -1,0 +1,1 @@
+En aquesta carpeta es guardaran els jocs de prova dels Managed Beans de JSF.

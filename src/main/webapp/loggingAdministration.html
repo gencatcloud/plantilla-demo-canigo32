@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.0.3/sockjs.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
+<script src="js/main.js"></script>
+<script src="js/messageHandler.js"></script>
+<script src="js/jquery.highlight.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/logging.css">
+</head>
+<body id="ng-app">
+	<div class="container">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="brand" href="index.html"> <img
+						src="http://www.gencat.cat/img2/temp/escudo_tcm32-28377.gif"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tabs">
+		<ul class="tab-links">
+			<li class="active"><a href="#tab1">Configuració Nivells de Log</a></li>
+			<li><a href="#tab2">Visualització de Fitxers de Log</a></li>
+		</ul>
+		<div class="tab-content">
+			<div id="tab1" class="tab active">
+				<ul data-role="listview" id="thelist"></ul>
+			</div>
+			<div id="tab2" class="tab">
+				<div id="toolbar">
+					<select id="selectAppender"></select> 
+					<i id="connectionStatusIcon" class="fa fa-exclamation-triangle"></i>
+					<input type="button" id="connectar" value="Connectar">
+					<input type="button" id="desconnectar" value="Desconnectar">
+					<input type="button" id="downloadLog" value="Descarregar">
+					<span class="search">
+						<i class="fa fa-search"></i> 
+						<input id="searchText" placeholder="Cercar contingut" type="search" size="30" accesskey="s" />
+						<a href="#" accesskey="C" id="clearButton" title="Netejar Log">
+						<i class="fa fa-ban"></i>
+					</a>
+					</span>
+				</div>
+				<pre>
+					<div id="logContent"></div>
+				</pre>
+			</div>
+		</div>
+	</div>
+	  <div id="footer" class="page-footer">
+	      <div class="alert alert-danger">
+	        <p>Aquesta és una web no adaptada al <a href="http://www.gencat.cat/web/guies/estil/" >Programa d'identificació visual (PIV) </a>de la Generalitat de Catalunya. En cas de ser utilitzada per el desenvolupament d'una aplicació és responsabilitat del proveïdor que desenvolupi l'aplicació Canigó fer aquesta adaptació.</p>
+	      </div>
+	  </div>
+</body>
+</html>

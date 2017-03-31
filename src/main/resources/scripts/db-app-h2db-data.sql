@@ -1,0 +1,15 @@
+insert into equipaments (id, nom, municipi) values (1, 'estació autobusos', 'Ripoll');
+insert into equipaments (id, nom, municipi) values (2, 'centre obert Alba', 'Cambrils');
+insert into equipaments (id, nom, municipi) values (3, 'Llar d''infants Món Petit', 'l''Escala');
+insert into equipaments (id, nom, municipi) values (4, 'Jutjat de Pau', 'Sant Esteve de Palautordera');
+insert into equipaments (id, nom, municipi) values (5, 'LLI privada Quitxalla', 'Mollet del Vallés');
+insert into equipaments (id, nom, municipi) values (6, 'PISTA POLIESPORTIVA MUNICIPAL', 'Aguilar de Segarra');
+insert into equipaments (id, nom, municipi) values (7, 'La Salle Manlleu', 'Manlleu');
+insert into equipaments (id, nom, municipi) values (8, 'SERVEI COMARCAL DE JOVENTUT DE LA TERRA ALTA', 'Gandesa');
+insert into equipaments (id, nom, municipi) values (9, 'Residència d''Avis de Capellades Fundació Consorts Guasch', 'Capellades');
+insert into equipaments (id, nom, municipi) values (10, 'PISTA DE BASQUET AL CARRER (PL DR. BONET)', 'Vilafranca del Penedès');
+insert into equipaments (id, nom, municipi) values (11, 'Punt TIC - Biblioteca Municipal de Capellades', 'Capellades');
+insert into equipaments (id, nom, municipi) values (12, 'Parc de Recerca Biomèdica de Barcelona', 'Barcelona');
+insert into equipaments (id, nom, municipi) values (13, 'Instal·lació Esportiva CEIP BLANCA DE VILALLONGA-ZER ALT SEGRIÀ', 'Portella la');
+insert into equipaments (id, nom, municipi) values (14, 'INDOORKARTING', 'INDOORKARTING');
+insert into equipaments (id, nom, municipi) values (15, 'Biblioteca de l''Hospital de Tortosa Verge de La Cinta', 'Tortosa');

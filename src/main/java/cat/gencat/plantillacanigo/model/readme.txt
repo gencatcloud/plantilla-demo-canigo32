@@ -1,0 +1,1 @@
+En aquesta carpeta es guardaran els fitxers de domini de l'aplicació

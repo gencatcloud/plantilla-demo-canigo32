@@ -1,0 +1,1 @@
+En aquesta carpeta es guardaran els Managed Beans de JSF.

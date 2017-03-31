@@ -1,0 +1,1 @@
+En aquesta carpeta es guardaran els jocs de prova de les classes de domini de l'aplicació

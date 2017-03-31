@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wls:weblogic-web-app xmlns:wls="http://www.bea.com/ns/weblogic/weblogic-web-app" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd http://www.bea.com/ns/weblogic/weblogic-web-app http://www.bea.com/ns/weblogic/weblogic-web-app/1.0/weblogic-web-app.xsd">
+
+    <wls:container-descriptor>
+    	<wls:servlet-reload-check-secs>-1</wls:servlet-reload-check-secs>
+		<wls:save-sessions-enabled>false</wls:save-sessions-enabled>
+		<wls:prefer-web-inf-classes>false</wls:prefer-web-inf-classes>
+		<wls:optimistic-serialization>false</wls:optimistic-serialization>
+    
+		<wls:prefer-application-packages>
+	     	<wls:package-name>com.bea.faces.*</wls:package-name>
+	     	<wls:package-name>com.google.*</wls:package-name>
+	     	<!-- Persistencia  -->
+	     	<wls:package-name>javax.persistence.*</wls:package-name>
+			<!-- JAXB  -->
+			<wls:package-name>com.sun.xml.bind.*</wls:package-name>
+			<wls:package-name>org.springframework.*</wls:package-name>
+			
+			<wls:package-name>org.slf4j.*</wls:package-name>
+			<wls:package-name>javassist.*</wls:package-name>
+	        <wls:package-name>org.joda.*</wls:package-name>
+		    <wls:package-name>antlr.*</wls:package-name>
+      		<wls:package-name>javax.jws.*</wls:package-name>
+ 		</wls:prefer-application-packages>
+	</wls:container-descriptor>
+
+</wls:weblogic-web-app>

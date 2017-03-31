@@ -1,0 +1,1 @@
+En aquesta carpeta es guardaran els fitxer de configuració dels jocs de proves.
