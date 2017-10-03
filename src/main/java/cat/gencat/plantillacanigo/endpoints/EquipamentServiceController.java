@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import cat.gencat.ctti.canigo.arch.web.rs.model.Data;
 import cat.gencat.ctti.canigo.arch.web.rs.response.ResponsePage;
 import io.swagger.annotations.ApiParam;
 import cat.gencat.plantillacanigo.model.Equipament;
@@ -34,26 +35,33 @@ public class EquipamentServiceController {
 	public ResponsePage<Equipament> findPaginated(
 			@ApiParam(value = "Nombre de p&agrave;gines")@RequestParam(defaultValue = "1", value = "page", required = false) final Integer page,
 			@ApiParam(value = "Valors per p&agrave;gina")@RequestParam(defaultValue = "10", value = "rpp", required = false) final Integer rpp,
-			@ApiParam(value = "Camp Ordenaci&oacute;")@RequestParam(defaultValue = "id", value = "sortField", required = false) final String sortField,
-			@ApiParam(value = "Ordre d'ordenaci&oacute (asc/desc)")@RequestParam(defaultValue = "asc", value = "sortDirection", required = false) final String sortDirection,
+			@ApiParam(value = "Camp Ordenaci&oacute; Ex(id,-municipi)")@RequestParam(defaultValue = "id,-municipi", value = "sort", required = false) final String sort,
 			@ApiParam(value = "Filtre Ex(Municipi:Cambrils)")@RequestParam(value = "filter", required = false) final String filter) {
 		
-		final Page<Equipament> equipaments = equipamentService.findPaginated(page, rpp, sortField, sortDirection, filter);
+		final Page<Equipament> equipaments = equipamentService.findPaginated(page, rpp, sort, filter);
 
-		return new ResponsePage<Equipament>(equipaments.getTotalElements(), equipaments.getSize(), equipaments.getNumberOfElements(), equipaments.getContent());
+		long offset = equipaments.getNumber() * equipaments.getSize();
+		
+		Data<Equipament> data = new Data<Equipament>(equipaments.getTotalElements(), equipaments.getSize(), equipaments.getNumberOfElements(), offset, equipaments.getContent());
+		
+		return new ResponsePage<Equipament>(data);
 	}
 	
 	@GetMapping(value = "/projeccio", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponsePage<Equipament> findPaginatedProjeccio(
 			@ApiParam(value = "Nombre de p&agrave;gines")@RequestParam(defaultValue = "1", value = "page", required = false) final Integer page,
 			@ApiParam(value = "Valors per p&agrave;gina")@RequestParam(defaultValue = "10", value = "rpp", required = false) final Integer rpp,
-			@ApiParam(value = "Camp Ordenaci&oacute;")@RequestParam(defaultValue = "id", value = "sortField", required = false) final String sortField,
-			@ApiParam(value = "Ordre d'ordenaci&oacute (asc/desc)")@RequestParam(defaultValue = "asc", value = "sortDirection", required = false) final String sortDirection,
-			@ApiParam(value = "Filtre Ex(Municipi:Cambrils)")@RequestParam(value = "filter", required = false) final String filter) {
+			@ApiParam(value = "Camp Ordenaci&oacute; Ex(id,-municipi)")@RequestParam(defaultValue = "id,-municipi", value = "sort", required = false) final String sort,
+			@ApiParam(value = "Filtre Ex(Municipi:Cambrils)")@RequestParam(value = "filter", required = false) final String filter,
+			@ApiParam(value = "Camps retornats")@RequestParam(defaultValue = "id,municipi", value = "fields", required = true) final String fields) {
 		
-		final Page<Equipament> equipaments = equipamentService.findPaginatedProjeccio(page, rpp, sortField, sortDirection, filter);
+			final Page<Equipament> equipaments = equipamentService.findPaginatedProjeccio(page, rpp, sort, filter, fields);
 
-		return new ResponsePage<Equipament>(equipaments.getTotalElements(), equipaments.getSize(), equipaments.getNumberOfElements(), equipaments.getContent());
+			long offset = equipaments.getNumber() * equipaments.getSize();
+			
+			Data<Equipament> data = new Data<Equipament>(equipaments.getTotalElements(), equipaments.getSize(), equipaments.getNumberOfElements(), offset, equipaments.getContent());
+
+			return new ResponsePage<Equipament>(data);
 	}
 
 	@GetMapping(value = "/{id}", produces = { MediaType.APPLICATION_JSON_VALUE })

@@ -11,6 +11,10 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @Table(name = "equipaments")
 public class Equipament {
+	
+	public static final String ID = "id";
+	public static final String NOM = "nom";
+	public static final String MUNICIPI = "municipi";
 
 	private Long id;
 	

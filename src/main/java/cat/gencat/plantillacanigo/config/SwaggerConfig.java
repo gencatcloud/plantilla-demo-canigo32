@@ -7,7 +7,7 @@
  * Licence is distributed on an "AS IS" basis, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the Licence for the specific
  * language governing permissions and limitations under the Licence.
  *
- * Original authors: Centre de Suport Canigó Contact: oficina-tecnica.canigo.ctti@gencat.cat
+ * Original authors: Centre de Suport Canig? Contact: oficina-tecnica.canigo.ctti@gencat.cat
  *******************************************************************************/
 package cat.gencat.plantillacanigo.config;
 
@@ -30,7 +30,6 @@ public class SwaggerConfig {
 	@Bean
 		public Docket api() {
 		final Docket docket = new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.any()).paths(Predicates.not(PathSelectors.regex("/login.*|/error.*"))).build();
-		docket.pathMapping(ConfigConstant.API);
 		return docket;
 	}
 }
